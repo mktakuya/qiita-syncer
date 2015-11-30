@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>技術資料一覧 - Takuya Mukohira のページ</title>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1 user-scalable=no" name="viewport">
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <!-- Simple Sidebar -->
+    <link href="../css/simple-sidebar.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="../css/custom.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div id="wrapper">
+      <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+          <h1 class="sidebar-brand">
+            <a href="http://www/~mt12340/">mt12340</a>
+          </h1>
+          <li>
+            <h2>Contents</h2>
+          </li>
+          <li><a href="../about.html">About Me</a></li>
+          <li><a href="../softech.html">ソフテク関連</a></li>
+          <li><a href="../others.html">その他</a></li>
+        </ul>
+      </div>
+
+      <div id="page-content-wrapper">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-12">
+              <div id="texts">
+                <h2 class="page-header">技術資料一覧</h2>
+
+                <div class="text">
+                  <p><a href="http://qiita.com/mktakuya/items">向平が投稿したQiitaの記事</a>をダウンロードしてきて、ここに置いてあります。</p>
+                  <p>インターネットに繋がる16時以降は、普通にQiitaを見れば良いと思います。</p>
+
+                  <h3>TODO</h3>
+                  <ul>
+                    <li>HTML直接引っ張ってくる感じだと微妙なのでredcarpet使ってMarkdnwo -> HTMLって感じでやる</li>
+                    <li>画像対応</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="text">
+                <h3>記事一覧</h3>
+                <ul>
+                  <% items.each do |item| %>
+                    <li><a href="<%= "./#{item['id']}.html" %>"><%= item['title'] %></a></li>
+                  <% end %>
+                </ul>
+              </div>
+
+              <div class="visible-xs">
+                <a id="menu-toggle" class="btn btn-default" style="position: fixed; top: 30px; right: 3px;" href="#menu-toggle">Menu</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- jQuery -->
+    <script src="../js/jquery.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../js/bootstrap.min.js"></script>
+  </body>
+</html>
+
